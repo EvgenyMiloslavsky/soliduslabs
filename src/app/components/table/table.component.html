@@ -41,7 +41,8 @@
       mat-row
       (click)="onClickRow(row, i)"
       [class.demo-row-is-clicked]="clickedRows.has(row)"
-      *matRowDef="let row; let i = dataIndex; columns: displayedColumns;">
+      *matRowDef="let row; let i = dataIndex; columns: displayedColumns;"
+      >
     </tr>
 
   </table>

@@ -17,8 +17,8 @@ export class TableComponent implements AfterViewInit, OnInit {
   events: Event[] = [];
   event!: Event;
   index!: number;
-  dataSource: any;
 
+  dataSource: any;
 
   displayedColumns: string[] = ['timestamp', 'price', 'status'];
 
@@ -67,8 +67,10 @@ export class TableComponent implements AfterViewInit, OnInit {
 
 
   onClickRow(row: Event, index: number) {
+    this.clickedRows.clear();
     this.service.eventListener$.next(row);
     this.service.indexListener$.next(index);
+    this.clickedRows.add(row);
     console.log("Click ", row, index + 1);
   }
 
