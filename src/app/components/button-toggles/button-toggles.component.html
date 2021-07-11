@@ -1,0 +1,33 @@
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" fxFill>
+  <mat-button-toggle
+    value="bold"
+    (click)="firstEvent()"
+    [disabled]='index <= 0'>
+    First
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="italic"
+    (click)="previousEvent()"
+    [disabled]='index == 0'>
+    Previous
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="underline"
+    (click)="onPlayPause()"
+    [disabled]="index == size">
+    Play/Pause
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="underline"
+    id=" next"
+    (click)=" nextEvent()"
+    [disabled]="index == size-1">
+    Next
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="underline"
+    (click)="lastEvent()"
+    [disabled]="index == size-1">
+    Last
+  </mat-button-toggle>
+</mat-button-toggle-group>
