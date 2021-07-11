@@ -42,12 +42,13 @@ export class TableComponent implements AfterViewInit, OnInit {
 //-----GET EVENTS FROM FILE
     this.service.events$.subscribe(events =>
       this.events = events
-    )
+  )
 //---------------------------------------------------------------------
 
 //------ GET EVENT BY INDEX
     this.service.index$.subscribe(ind => {
       this.service.eventListener$.next(this.events[ind]);
+      this.clickedRows.add(this.event);
     })
 //---------------------------------------------------------------------
 
